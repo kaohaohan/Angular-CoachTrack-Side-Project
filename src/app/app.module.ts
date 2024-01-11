@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { ChooseRoleComponent } from './choose-role/choose-role.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { StudentprofileComponent } from './studentprofile/studentprofile.component'; // 添加这行
+import { StudentprofileComponent } from './studentInfo/studentprofile.component';
+import { CoachInfoComponent } from './coach-info/coach-info.component'; // 添加这行
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StudentprofileComponent } from './studentprofile/studentprofile.compone
     ChooseRoleComponent,
     HomepageComponent,
     StudentprofileComponent,
+    CoachInfoComponent,
   ],
   imports: [
     BrowserModule,
