@@ -1,0 +1,237 @@
+<div class="min-h-screen bg-gray-800 flex flex-col items-center justify-center p-4">
+    <h3 class="mb-4 font-semibold text-white text-center text-2xl mx-auto max-w-xl">Hi! Let's fill your basic information to give your more comprehensive experience!! </h3>
+  
+    <div class="w-full max-w-md bg-orange-600 rounded-lg shadow-lg p-8">
+        <div class="flex flex-col justify-center  gap-y-4">
+            <div>
+                <h3 class="font-semibold text-white text-start text-xl w-full max-w-md">Birth</h3>
+                <div class="relative max-w-sm w-full">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        </svg>
+                    </div>
+                    <input datepicker datepicker-format="mm/dd/yyyy" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+                </div>
+            </div>
+            <div>
+                <h3 class="font-semibold text-white text-start text-xl w-full max-w-md">Gender</h3>
+                <div>  
+                    <ul class="text-xl text-white">
+                        <li class="py-4 flex px-2 rounded-lg bg-gray-800/50 mb-1">
+                          <label class="flex justify-start items-center w-full">
+                            <input type="radio" name="role" value="coach"  class="mr-2">
+                            <span>Male</span>
+                          </label>  
+                          
+                        </li>
+                        <li class="py-4 flex justify-start items-center px-2 rounded-lg bg-gray-800/50">
+                            <label class="flex justify-start items-center w-full">
+                                <input type="radio" name="role" value="student"  class="mr-2">
+                                <span>Female</span>
+                            </label>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-semibold text-white text-start text-xl w-full max-w-md">Phone Number</h3>
+                <div>
+                    <form class="max-w-sm mx-auto">
+                        <div class="flex items-center">
+                            <button id="dropdown-phone-button" data-dropdown-toggle="dropdown-phone" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
+                                <div [innerHTML]="selectedFlagSvg"></div>
+                                <div [innerHTML]="selectedCountryCode"></div>
+                                <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
+                            </button>
+                            <div id="dropdown-phone" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52 dark:bg-gray-700">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-phone-button">
+                                    <li>
+                                        <button type="button" (click)="selectCountry('+1', usFlagSvg)" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div class="inline-flex items-center">
+                                                <svg fill="none" aria-hidden="true" class="h-4 w-4 me-2" viewBox="0 0 20 15"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/><mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/></mask><g mask="url(#a)"><path fill="#D02F44" fill-rule="evenodd" d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z" clip-rule="evenodd"/><path fill="#46467F" d="M0 .5h8.4v6.533H0z"/><g filter="url(#filter0_d_343_121520)"><path fill="url(#paint0_linear_343_121520)" fill-rule="evenodd" d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z" clip-rule="evenodd"/></g></g><defs><linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#F0F0F0"/></linearGradient><filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="1"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape"/></filter></defs></svg>
+                                                United States (+1)
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" (click)="selectCountry('+44',ukFlagSvg)" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div class="inline-flex items-center">
+                                                <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/><mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/></mask><g mask="url(#a)"><path fill="#0A17A7" d="M0 .5h19.6v14H0z"/><path fill="#fff" fill-rule="evenodd" d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z" clip-rule="evenodd"/><path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667" d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093"/><path fill="#E6273E" fill-rule="evenodd" d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z" clip-rule="evenodd"/></g></svg>
+                                                United Kingdom (+44)
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" (click)="selectCountry('+61', ausFlagSvg)" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div class="inline-flex items-center">
+                                                <svg class="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/><mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/></mask><g mask="url(#a)"><path fill="#0A17A7" d="M0 .5h19.6v14H0z"/><path fill="#fff" stroke="#fff" stroke-width=".667" d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z"/><path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd" d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z" clip-rule="evenodd"/><path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd" d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z" clip-rule="evenodd"/></g><defs><linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.5" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#F0F0F0"/></linearGradient><linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.033" gradientUnits="userSpaceOnUse"><stop stop-color="#FF2E3B"/><stop offset="1" stop-color="#FC0D1B"/></linearGradient></defs></svg>
+                                                Australia (+61)
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" (click)="selectCountry('+49', gerFlagSvg)" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div class="inline-flex items-center">
+                                                <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/><mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse"><rect width="19.6" height="14" y=".5" fill="#fff" rx="2"/></mask><g mask="url(#a)"><path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd"/><g filter="url(#filter0_d_374_135180)"><path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd"/></g><g filter="url(#filter1_d_374_135180)"><path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd"/></g></g><defs><filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape"/></filter><filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape"/></filter></defs></svg>
+                                                Germany (+49)
+                                            </div>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button"(click)="selectCountry('+33', frFlagSvg)" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div class="inline-flex items-center">
+                                                <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15"><rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#F5F5F5" stroke-width=".5" rx="1.75"/><mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse"><rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#fff" stroke-width=".5" rx="1.75"/></mask><g mask="url(#a)"><path fill="#F44653" d="M13.067.5H19.6v14h-6.533z"/><path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z" clip-rule="evenodd"/></g></svg>
+                                                France (+33)
+                                            </div>
+                                        </button>
+                                    </li>
+                                 
+                                    <li>
+                                        <button type="button" (click)="selectCountry('+886', twFlagSvg)" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+                                            <div class="inline-flex items-center">
+                                                <svg class="w-4 h-4 me-2" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+                                                   
+                                                    <rect fill="#FE0000" width="36" height="24"/>
+                                                    
+                                                    <rect fill="#000095" width="18" height="12"/>
+                                                   
+                                                    <circle fill="#FFFFFF" cx="9" cy="6" r="4.5"/>
+                                                    <g fill="#FFFFFF" transform="translate(9,6)">
+                                                        <path d="M0-3.6L0.6-2.2 1.8-2.2 0.9-1.3 1.5 0 0-0.9-1.5 0-0.9-1.3-1.8-2.2-0.6-2.2Z"/>
+                                                        <use href="#path0_fill" transform="rotate(30)"/>
+                                                        <use href="#path0_fill" transform="rotate(60)"/>
+                                                        <use href="#path0_fill" transform="rotate(90)"/>
+                                                        <use href="#path0_fill" transform="rotate(120)"/>
+                                                        <use href="#path0_fill" transform="rotate(150)"/>
+                                                        <use href="#path0_fill" transform="rotate(180)"/>
+                                                        <use href="#path0_fill" transform="rotate(210)"/>
+                                                        <use href="#path0_fill" transform="rotate(240)"/>
+                                                        <use href="#path0_fill" transform="rotate(270)"/>
+                                                        <use href="#path0_fill" transform="rotate(300)"/>
+                                                        <use href="#path0_fill" transform="rotate(330)"/>
+                                                    </g>
+                                                </svg>
+                                                Taiwan (+886)
+                                            </div>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <label for="phone-input" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Phone number:</label>
+                            <div class="relative w-full">
+                                <input type="text" id="phone-input" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-0 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <label id="listbox-label" class="font-semibold text-white text-start text-xl w-full max-w-md">Assigned to</label>
+                <div class="relative mt-2">
+                  <button type="button" class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm" aria-haspopup="listbox" [attr.aria-expanded]="true" aria-labelledby="listbox-label" (click)="toggleDropdown()">
+                    <span class="flex items-center" *ngIf="selectedCoach">
+                      <img [src]="selectedCoach.imageUrl" alt="" class="h-5 w-5 flex-shrink-0 rounded-full">
+                      <span class="ml-3 block truncate">{{ selectedCoach.name }}</span>
+                    </span>
+                    <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                      <!-- SVG箭头图标 -->
+                    </span>
+                  </button>
+                  
+                  <!-- Dropdown list -->
+                  <ul *ngIf="isCoachListDropdownOpen" class="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label">
+                    <li *ngFor="let coach of coaches" (click)="onSelectCoach(coach)" class="text-gray-900 relative cursor-default select-none py-2 pl-3 pr-9" role="option">
+                      <div class="flex items-center">
+                        <img [src]="coach.imageUrl" alt="" class="h-5 w-5 flex-shrink-0 rounded-full">
+                        <span class="font-normal ml-3 block truncate">{{ coach.name }}</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div>
+                <div class="mb-6">
+                    <label for="address" class="font-semibold text-white text-start text-xl w-full max-w-md"> Address</label>
+                    <input type="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write address..." required>
+                </div> 
+                
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                    <label for="emergencyContactName" class="font-semibold text-white text-start text-sm w-full max-w-md">Emergency Contact Name</label>
+                     <input type="text" id="emergencyContactName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter name..." required>
+                </div>
+                <div>
+                    <label for="emergencyContactPhone" class="font-semibold text-white text-start text-sm w-full max-w-md">Emergency Contact Phone</label>
+                    <input type="tel" id="emergencyContactPhone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter phone number..." pattern="\d{8,}" required>
+                  </div>
+            </div>
+            <div class="mb-6">
+                
+                <form>
+                    <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 " placeholder="Enter phone number..." >
+                        <div class="flex items-center justify-between px-3 py-2 border-b ">
+                            <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x sm:rtl:divide-x-reverse ">
+                                <input type="file" (change)="previewImage($event)" #fileInput style="display: none;"  />
+                                <div class="flex items-center space-x-1 rtl:space-x-reverse sm:pe-4">
+                                    <button type="button" (click)="fileInput.click()" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 20">
+                                            <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M1 6v8a5 5 0 1 0 10 0V4.5a3.5 3.5 0 1 0-7 0V13a2 2 0 0 0 4 0V6"/>
+                                        </svg>
+                                        <span class="sr-only">Attach file</span>
+                                    </button>
+                                    
+                                </div>
+                                <div class="flex flex-wrap items-center space-x-1 rtl:space-x-reverse sm:ps-4">
+                                    <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
+                                            <path d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+                                        </svg>
+                                        <span class="sr-only">Download</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 py-5 bg-white rounded-b-lg w-full">
+                            <label for="editor" class="sr-only">Publish post</label>
+                            <div contenteditable="true" 
+                                id="editor" 
+                                class="block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0 relative">
+                                <span id="placeholder" class="absolute top-0 left-0 px-2 text-sm text-gray-400" style="pointer-events: none;">
+                                    Is there anything you would like to tell the coach? (Goals for achieving a desired physique, current health status, etc.)
+                                </span>
+                                <!-- 循环所有图片 -->
+                                <div *ngFor="let image of images; let i = index" class="relative">
+                                  <img [src]="image.src" class="w-full h-auto block mt-2"/>
+                                  <!-- 为每张图片提供一个删除按钮 -->
+                                  <button (click)="deleteImage(i)" type="button" class="absolute top-0 right-0 bg-red-600 text-white p-1 rounded-full text-xs leading-none hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" aria-label="Close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                  </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <button type="submit" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        Publish post
+                    </button>
+                </form>
+
+               
+                <img *ngIf="imageSrc" [src]="imageSrc" id="imagePreview" />
+            </div>
+            
+
+
+
+        </div>
+
+        
+    </div>
+   
+</div>

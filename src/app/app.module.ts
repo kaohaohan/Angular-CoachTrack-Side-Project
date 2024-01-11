@@ -9,7 +9,10 @@ import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service'; 
 import { HttpClientModule } from '@angular/common/http';
-import { SignupComponent } from './signup/signup.component'; // 添加这行
+import { SignupComponent } from './signup/signup.component';
+import { ChooseRoleComponent } from './choose-role/choose-role.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { StudentprofileComponent } from './studentprofile/studentprofile.component'; // 添加这行
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { SignupComponent } from './signup/signup.component'; // 添加这行
     LoginComponent,
     TestComponent,
     SignupComponent,
+    ChooseRoleComponent,
+    HomepageComponent,
+    StudentprofileComponent,
   ],
   imports: [
     BrowserModule,

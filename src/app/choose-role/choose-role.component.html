@@ -1,0 +1,32 @@
+<div class="min-h-screen bg-gray-800 flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <h3 class="mb-4 font-semibold text-white text-center text-2xl w-full max-w-md">Choose The Role</h3>
+        <div class="bg-orange-600 p-8 rounded-lg shadow-lg w-full max-w-md">
+            <ul class="text-xl text-white">
+              <li class="py-4 flex px-2 rounded-lg bg-gray-800/50 mb-1">
+                <label class="flex justify-start items-center w-full">
+                  <input type="radio" name="role" value="coach" [(ngModel)]="userRole" class="mr-2">
+                  <span>Coach</span>
+                </label>  
+                
+              </li>
+              <li class="py-4 flex justify-start items-center px-2 rounded-lg bg-gray-800/50">
+                  <label class="flex justify-start items-center w-full">
+                      <input type="radio" name="role" value="student" [(ngModel)]="userRole" class="mr-2">
+                      <span>Student or Athlete</span>
+                  </label>
+                
+              </li>
+            </ul>
+            <div class="flex justify-center mt-4 ">
+              <button (click)="onNext()" class="bg-green-500 text-white py-2 px-4 rounded-lg w-full max-w-md">NEXT</button>
+            </div>
+        </div>
+    </div>
+        
+   
+    
+    
+    
+  </div>
+  

@@ -1,0 +1,22 @@
+.hidden {
+    display: none;
+  }
+
+  #editor {
+    min-height: 60px; /* 至少20像素高，确保有空间可以输入文本 */
+    line-height: 1.5; /* 设置合适的行间距 */
+    padding: 8px; /* 一些内边距，以便文本不会直接贴边 */
+    overflow-y: auto; /* 如果内容超过高度，显示滚动条 */
+  }
+
+  #placeholder {
+    display: block;
+  }
+  
+  #editor:empty + #placeholder {
+    display: block;
+  }
+  
+  #editor:focus + #placeholder {
+    display: none;
+  }
